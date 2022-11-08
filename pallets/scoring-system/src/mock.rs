@@ -1,4 +1,4 @@
-use crate as pallet_scoring;
+use crate as pallet_scoring_system;
 use frame_support::{parameter_types, traits::Everything};
 use frame_system as system;
 use sp_core::H256;
@@ -18,7 +18,7 @@ frame_support::construct_runtime!(
 		UncheckedExtrinsic = UncheckedExtrinsic,
 	{
 		System: frame_system::{Pallet, Call, Config, Storage, Event<T>},
-		TemplateModule: pallet_scoring::{Pallet, Call, Storage, Event<T>},
+		TemplateModule: pallet_scoring_system::{Pallet, Call, Storage, Event<T>},
 	}
 );
 
@@ -32,8 +32,8 @@ impl system::Config for Test {
 	type BlockWeights = ();
 	type BlockLength = ();
 	type DbWeight = ();
-	type Origin = Origin;
-	type Call = Call;
+	type RuntimeOrigin = RuntimeOrigin;
+	type RuntimeCall = RuntimeCall;
 	type Index = u64;
 	type BlockNumber = u64;
 	type Hash = H256;
@@ -41,7 +41,7 @@ impl system::Config for Test {
 	type AccountId = u64;
 	type Lookup = IdentityLookup<Self::AccountId>;
 	type Header = Header;
-	type Event = Event;
+	type RuntimeEvent = RuntimeEvent;
 	type BlockHashCount = BlockHashCount;
 	type Version = ();
 	type PalletInfo = PalletInfo;
@@ -54,8 +54,8 @@ impl system::Config for Test {
 	type MaxConsumers = frame_support::traits::ConstU32<16>;
 }
 
-impl pallet_scoring::Config for Test {
-	type Event = Event;
+impl pallet_scoring_system::Config for Test {
+	type RuntimeEvent = RuntimeEvent;
 }
 
 // Build genesis storage according to the mock runtime.
