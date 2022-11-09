@@ -1,4 +1,4 @@
-//! Substrate Parachain Node Template CLI
+//! Substrate Parachain Node BlockScore CLI
 
 #![warn(missing_docs)]
 
