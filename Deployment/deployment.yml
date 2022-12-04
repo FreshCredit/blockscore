@@ -18,7 +18,17 @@ spec:
         - name: blockscore
           image: 293637174735.dkr.ecr.us-east-1.amazonaws.com/blockscore:latest
           ports:
-            - containerPort: 8080
+            - name: charlie
+              containerPort: 40334
+              protocol: TCP
+            - name: ws-port
+              containerPort: 8845
+              protocol: TCP
+            - name: wasm-port
+              containerPort: 30344
+              protocol: TCP
+            - name: wasm-ws-port
+              containerPort: 9978
               protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log
