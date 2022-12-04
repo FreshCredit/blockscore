@@ -5,7 +5,7 @@ metadata:
   name: blockscore
 spec:
   ports:
-    - name: blockscore-bob
+    - name: bob
       port: 40334
       targetPort: 40334
       protocol: TCP
