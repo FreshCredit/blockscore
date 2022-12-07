@@ -52,7 +52,6 @@ pub mod pallet {
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		ScoreUpdated(T::AccountId, u32),
-		Score(T::AccountId, u32),
 	}
 
 	// Errors inform users that something went wrong.
